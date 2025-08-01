@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbox - Basit Test Paneli</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: #3b82f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .test-section {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        .info {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Chatbox - Test Paneli</h1>
+            <p>Sistem durumunu kontrol edin</p>
+        </div>
+        
+        <div class="content">
+            <div class="test-section">
+                <h3>🔍 Sistem Testleri</h3>
+                
+                <h4>1. GitHub Repository Kontrolü</h4>
+                <a href="https://github.com/kriptobekir/ai-chatbox-links" target="_blank" class="btn">Repository'yi Aç</a>
+                <span class="info">✓ Repository mevcut</span>
+                
+                <h4>2. JSON Dosyaları</h4>
+                <a href="https://raw.githubusercontent.com/kriptobekir/ai-chatbox-links/main/sites.json" target="_blank" class="btn">sites.json Kontrol Et</a>
+                <a href="https://raw.githubusercontent.com/kriptobekir/ai-chatbox-links/main/sites-log.json" target="_blank" class="btn">sites-log.json Kontrol Et</a>
+                
+                <h4>3. GitHub Pages</h4>
+                <a href="https://kriptobekir.github.io/ai-chatbox-links/" target="_blank" class="btn">GitHub Pages Ana Sayfa</a>
+                
+                <h4>4. Manuel Test</h4>
+                <p>Bu linkleri açarak dosyaların mevcut olup olmadığını kontrol edin:</p>
+                <ul>
+                    <li><strong>sites.json:</strong> Link ayarları</li>
+                    <li><strong>sites-log.json:</strong> Site kayıtları</li>
+                    <li><strong>GitHub Pages:</strong> Web sitesi</li>
+                </ul>
+            </div>
+            
+            <div class="test-section">
+                <h3>📝 Manuel Kontrol</h3>
+                <p>Eğer dosyalar boşsa veya hata veriyorsa:</p>
+                
+                <h4>sites.json için:</h4>
+                <pre>{
+  "sites": {
+    "test-site.com": {
+      "link_text": "Test Link",
+      "link_url": "https://example.com",
+      "active": true
+    }
+  }
+}</pre>
+                
+                <h4>sites-log.json için:</h4>
+                <pre>{
+  "test-site.com": {
+    "domain": "test-site.com",
+    "url": "https://test-site.com",
+    "registered_at": "2025-01-15 15:30:25",
+    "last_seen": "2025-01-15 15:30:25",
+    "active": true
+  }
+}</pre>
+            </div>
+            
+            <div class="test-section">
+                <h3>🚀 Sonraki Adımlar</h3>
+                <ol>
+                    <li>GitHub'da dosyaları kontrol et</li>
+                    <li>Eğer boşsa, yukarıdaki örnekleri ekle</li>
+                    <li>Eklentiyi bir WordPress sitesinde test et</li>
+                    <li>Site kaydının oluşup oluşmadığını kontrol et</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
