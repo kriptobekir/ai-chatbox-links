@@ -1,0 +1,14 @@
+{
+  "sites": {
+    "example.com": {
+      "link_text": "Web Tasarım",
+      "link_url": "https://example.com",
+      "active": true
+    },
+    "test.com": {
+      "link_text": "Dijital Ajans",
+      "link_url": "https://test.com",
+      "active": true
+    }
+  }
+} 
