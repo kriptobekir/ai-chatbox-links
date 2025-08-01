@@ -137,7 +137,7 @@
         // GitHub'dan site loglarını çek
         async function loadSites() {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/kullanici/ai-chatbox-links/main/sites-log.json');
+                const response = await fetch('https://raw.githubusercontent.com/kriptobekir/ai-chatbox-links/main/sites-log.json');
                 const sites = await response.json();
                 
                 displaySites(sites);
@@ -163,7 +163,7 @@
                     <td>${site.registered_at}</td>
                     <td>${site.last_seen}</td>
                     <td><span class="${statusClass}">${status}</span></td>
-                    <td><a href="https://github.com/kullanici/ai-chatbox-links/edit/main/sites.json" target="_blank" class="btn">Link Düzenle</a></td>
+                    <td><a href="https://github.com/kriptobekir/ai-chatbox-links/edit/main/sites.json" target="_blank" class="btn">Link Düzenle</a></td>
                 `;
                 
                 tbody.appendChild(row);
