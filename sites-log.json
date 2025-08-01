@@ -1,0 +1,9 @@
+{
+  "test-site.com": {
+    "domain": "test-site.com",
+    "url": "https://test-site.com",
+    "registered_at": "2025-01-15 15:30:25",
+    "last_seen": "2025-01-15 15:30:25",
+    "active": true
+  }
+} 
