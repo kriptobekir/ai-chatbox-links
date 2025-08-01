@@ -85,6 +85,22 @@
             background: #10b981;
             margin-bottom: 20px;
         }
+        .error-message {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .info-message {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +111,11 @@
         </div>
         
         <div class="content">
+            <div class="info-message">
+                <strong>Bilgi:</strong> Bu panel GitHub Pages üzerinden çalışır. 
+                <a href="https://kriptobekir.github.io/ai-chatbox-links/admin-panel.html" target="_blank">GitHub Pages versiyonunu aç</a>
+            </div>
+            
             <button class="btn refresh-btn" onclick="loadSites()">Yenile</button>
             
             <div class="stats">
@@ -137,14 +158,28 @@
         // GitHub'dan site loglarını çek
         async function loadSites() {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/kriptobekir/ai-chatbox-links/main/sites-log.json');
+                // CORS proxy kullan
+                const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                const targetUrl = 'https://raw.githubusercontent.com/kriptobekir/ai-chatbox-links/main/sites-log.json';
+                const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
                 const sites = await response.json();
+                
+                if (Object.keys(sites).length === 0) {
+                    document.getElementById('sites-list').innerHTML = '<tr><td colspan="6" style="text-align: center; color: #6b7280;">Henüz site kaydı yok</td></tr>';
+                    updateStats({});
+                    return;
+                }
                 
                 displaySites(sites);
                 updateStats(sites);
             } catch (error) {
                 console.error('Siteler yüklenemedi:', error);
-                document.getElementById('sites-list').innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Hata: Siteler yüklenemedi</td></tr>';
+                document.getElementById('sites-list').innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Hata: Siteler yüklenemedi. GitHub Pages versiyonunu deneyin.</td></tr>';
             }
         }
         
